@@ -1,6 +1,6 @@
 {
   "name": "leaflet-ant-path",
-  "version": "0.1.0",
+  "version": "0.1.3",
   "authors": [
     "Rubens Pinheiro Gonçalves Cavalcante <rubenspgcavalcante@gmail.com>"
   ],
@@ -21,7 +21,6 @@
   "homepage": "https://github.com/rubenspgcavalcante/leaflet-ant-path",
   "ignore": [
     "**/.*",
-    "node_modules",
     "bower_modules"
   ],
   "devDependencies": {

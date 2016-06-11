@@ -1,4 +1,6 @@
 # Leaflet Ant Path (Bower Repository)
+
+##Note:
 **If you're looking for the source code, go to the [official repo](https://github.com/rubenspgcavalcante/leaflet-ant-path)**
 
 ## *Creates a leaflet polyline with a 'ant-path' animated flux*
