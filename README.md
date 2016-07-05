@@ -1,4 +1,5 @@
 # Leaflet Ant Path (Bower Repository)
+[![Build Status](https://travis-ci.org/rubenspgcavalcante/leaflet-ant-path.svg?branch=master)](https://travis-ci.org/rubenspgcavalcante/leaflet-ant-path)
 
 ##Note:
 **If you're looking for the source code, go to the [official repo](https://github.com/rubenspgcavalcante/leaflet-ant-path)**
