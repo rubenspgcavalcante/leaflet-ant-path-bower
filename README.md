@@ -1,5 +1,5 @@
 # Leaflet Ant Path
-[![Build Status](https://travis-ci.org/rubenspgcavalcante/leaflet-ant-path.svg?branch=master)](https://travis-ci.org/rubenspgcavalcante/leaflet-ant-path)
+[![Build Status](https://travis-ci.org/rubenspgcavalcante/leaflet-ant-path.svg?branch=master)](https://travis-ci.org/rubenspgcavalcante/leaflet-ant-path) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/ca1062428b51428b8204e9044d4fdc3b)](https://www.codacy.com/app/rubenspgcavalcante/leaflet-ant-path?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=rubenspgcavalcante/leaflet-ant-path&amp;utm_campaign=Badge_Grade)
 
 ## *Creates a leaflet polyline with a 'ant-path' animated flux*
 [Live demo here](http://rubenspgcavalcante.github.io/leaflet-ant-path)
@@ -75,7 +75,7 @@ require(['leafletAntPath'], function(AntPathModule) {
 });
 ```
 
-Using with browerify:
+Using with browserify:
 
 ``` javascript
     var AntPath = require('leafletAntPath').AntPath;
@@ -94,6 +94,44 @@ Using with ES6 imports
     antPolyline.addTo(map);
 ```
 
+### ES6/ES2015 features
+Thinking in the new features of JavaScript, and its new way of programing,
+AntPath has some nicely features to work with ES6.
+
+#### spreadable
+When spread the path, you will receive it lat/lngs array;
+```javascript
+    ...
+    let antPathLayer = new AntPath(path, options);
+    let anotherAntPath = new AntPath(path2, options);
+    
+    let latLngs = [...antPathLayer, ...anotherAntPath];
+```
+
+#### iterable
+When used in a **for ... of ...** loops over the path coordinates
+```javascript
+for(let latLng of antPath) {
+    // do something with it latLngs ...
+}
+```
+
+#### extensible
+You can create you custom 'class' based on the AntPath:
+```javascript
+class CustomAntPath extends AntPath {
+    //...
+}
+```
+
+#### map method
+AntPath has a map method as the Array, returning a new instance of 
+AntPath *(or the child class which extends it)*:
+```javascript
+//New path with translated path
+let newAnthPath = myAntPath.map(pos => latLng(pos.lat+1, pos.lng+1));
+```
+
 ### Parameters
 The AntPath extends from the [FeatureGroup](http://leafletjs.com/reference.html#featuregroup), but you initialise with
 the same options of a common [Polyline]((http://leafletjs.com/reference.html#polyline)), with some extra options, like the flux color.  
@@ -109,6 +147,9 @@ the same options of a common [Polyline]((http://leafletjs.com/reference.html#pol
 
 ---
 
+### Methods
+Same as the L.Polyline API and with the same behaviour. [See it here.](http://leafletjs.com/reference.html#polyline)
+
 ### Building and Testing
 To run the build, before install the npm and gulp dependencies, then run:
 
@@ -122,6 +163,18 @@ To test:
     gulp test
 ```
 
+### Development Environment
+**Be sure all the dev-dependencies are installed.**
+Just run the command:
+```
+npm start
+```
+
+This will make the webpack compile the dev. env. and set up into a
+webserver with hot deployment into the localhost:8080. There you can make
+changes into the plugin and see in real time all your modifications running.
+
 ### License
 
 This project is under the [MIT LICENSE](http://opensource.org/licenses/MIT)
+
